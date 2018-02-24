@@ -1,6 +1,5 @@
 package com.chernyshov777.spring.soundsystem;
 
-import com.chernyshov777.spring.soundsystem.CompactDisc;
 import org.springframework.stereotype.Component;
 
 @Component
