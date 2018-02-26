@@ -1,10 +1,10 @@
 package com.chernyshov777.spring.colors;
 
-import org.springframework.context.annotation.Primary;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@Primary
+@Qualifier("black")
 public class BlackColor implements Color {
 
     @Override

@@ -19,7 +19,12 @@ public class CDPlayerTest {
     public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
 
     @Autowired
-    private MediaPlayer mediaPlayer;
+    @DarkPlayer
+    private MediaPlayer cdBlackPlayer;
+
+    @Autowired
+    @GreenPlayer
+    private MediaPlayer dvdGreenPlayer;
 
     @Autowired
     private CompactDisc compactDisc;
@@ -31,12 +36,17 @@ public class CDPlayerTest {
 
     @Test
     public void play() {
-        mediaPlayer.play();
+        cdBlackPlayer.play();
         assertEquals("Playing Sgt. Pepper's Lonely Hearts Club Band by The Beatles", systemOutRule.getLog().trim());
     }
 
     @Test
     public void cpPlayerColorShouldBeBlack() {
-        assertEquals("black", mediaPlayer.getColor());
+        assertEquals("black", cdBlackPlayer.getColor());
+    }
+
+    @Test
+    public void dvdPlayerColorShouldBeGreen() {
+        assertEquals("green", dvdGreenPlayer.getColor());
     }
 }
