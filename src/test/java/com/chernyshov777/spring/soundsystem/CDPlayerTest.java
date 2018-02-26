@@ -34,4 +34,9 @@ public class CDPlayerTest {
         mediaPlayer.play();
         assertEquals("Playing Sgt. Pepper's Lonely Hearts Club Band by The Beatles", systemOutRule.getLog().trim());
     }
+
+    @Test
+    public void cpPlayerColorShouldBeBlack() {
+        assertEquals("black", mediaPlayer.getColor());
+    }
 }
