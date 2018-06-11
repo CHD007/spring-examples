@@ -1,5 +1,6 @@
 package com.chernyshov777.spring.soundsystem;
 
+import com.chernyshov777.spring.aspects.AspectsConfigurations;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.SystemOutRule;
@@ -12,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = CDPlayerConfig.class)
+@ContextConfiguration(classes = {CDPlayerConfig.class, AspectsConfigurations.class})
 public class CDPlayerTest {
 
     @Rule
@@ -37,7 +38,8 @@ public class CDPlayerTest {
     @Test
     public void play() {
         cdBlackPlayer.play();
-        assertEquals("Playing Sgt. Pepper's Lonely Hearts Club Band by The Beatles", systemOutRule.getLog().trim());
+        assertEquals("CDPlayer is verified\r\nPlaying Sgt. Pepper's Lonely Hearts Club Band by The Beatles",
+                systemOutRule.getLog().trim());
     }
 
     @Test
