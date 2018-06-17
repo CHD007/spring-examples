@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 
 @Component
 @Profiling
+@DeprecatedClass(newImpl = T1000.class)
 public class TerminatorQuoter implements Quoter {
     @Value("${quoters.terminatorQuote}")
     private String message;

@@ -10,6 +10,7 @@ import java.util.Random;
 
 @Component
 public class InjectRandomIntAnnotationBeanPostProcessor implements BeanPostProcessor {
+
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         System.out.println("postPrecessBeforeInitialization");
